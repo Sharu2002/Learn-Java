@@ -1,3 +1,4 @@
+package Sharu;
 class CatClass{
 
     //Attributes

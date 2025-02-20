@@ -1,3 +1,4 @@
+package Sharu;
 interface sayName{
     public void sayName();
 }

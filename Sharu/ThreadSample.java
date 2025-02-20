@@ -1,3 +1,4 @@
+package Sharu;
 class Dummy extends Thread{
 
     private String name;
