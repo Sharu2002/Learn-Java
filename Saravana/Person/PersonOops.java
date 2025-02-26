@@ -2,6 +2,7 @@
 // a Student class that inherits from Person and adds attributes studentId and grade.
 // Write a constructor for both classes.
 // Create an object of Student and display its details.
+
 class Person{
     String name;
     int age;
