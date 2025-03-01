@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.math.*;
 
 class Taxi{
+
     private int taxiId;
     private int totalEarnings;
     private int freeAt;
@@ -65,12 +66,12 @@ class TaxiList{
             }
         }
 
-        public void bookTaxi(char pickupPoint, char dropPoint, int pickupTime){
+        public void bookTaxi(char pickupPoint, char dropPoint, int pickupTime, int totTaxi){
 
             int taxiNos = 0;
-            ArrayList<Taxi> taxis = new ArrayList();
+            ArrayList<Taxi> taxis = new ArrayList<>();
             
-            for(int i = 0 ;i<=4 ;i++){
+            for(int i = 0 ;i<=totTaxi ;i++){
             
                 if(taxiNos == 0){
             
@@ -92,6 +93,7 @@ class TaxiList{
                 taxi = taxis.get(0);
             }
             else if (taxis.size() == 0){
+
                 System.out.println("Taxi not available");
                 return;
             }
@@ -100,6 +102,7 @@ class TaxiList{
                 Taxi lowestEarningTaxi = taxiList.get(0); 
 
                 for (Taxi i : taxis) {
+
                     if (i.getTotalEarnings() < lowestEarningTaxi.getTotalEarnings()) {
                         lowestEarningTaxi = i;
                     }
@@ -143,10 +146,12 @@ public class zohoQues {
 
         
         while(true){
+
             System.out.println("Enter your choice \n1.Book Taxi\n2.Display All Taxi details\n3.Close the program");
             int choice = in.nextInt();
 
             if(choice == 1){
+
                 int custId = 1;
                 System.out.println("Customer Id: " + custId);
                 System.out.println("Pickup point: ");
@@ -156,7 +161,8 @@ public class zohoQues {
                 System.out.println("Pickup time: ");
                 int pickupTime = in.nextInt();
                 custId++;
-                taxiList.bookTaxi(pickupPoint, dropPoint, pickupTime);
+                taxiList.bookTaxi(pickupPoint, dropPoint, pickupTime,totTaxi);
+                in.close();
             }
 
             else if(choice == 2){
@@ -170,6 +176,6 @@ public class zohoQues {
             else{
                 System.out.println("Invalid choice. Try again.");
             }
-        }
+        }        
     }
 }
